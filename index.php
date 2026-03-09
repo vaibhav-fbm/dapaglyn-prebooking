@@ -24,6 +24,10 @@ switch ($route) {
         require 'exports/export_csv.php';
         break;
 
+    case 'logout':
+        require './logout.php';
+        break;
+
     default:
         echo "404 Page Not Found";
 }

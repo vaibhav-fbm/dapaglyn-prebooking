@@ -1,6 +1,9 @@
 <?php
 
 session_start();
-session_destroy();
 
-header("Location: views/auth/login.php");
+session_unset();   // remove session variables
+session_destroy(); // destroy session
+
+header("Location: /dapaglyn_prebooking/login");
+exit;

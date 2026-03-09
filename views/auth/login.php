@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+if (isset($_SESSION['user_id'])) {
+    header("Location: /dapaglyn_prebooking/dashboard");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html
     lang="en"
@@ -11,7 +24,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Admin Login</title>
+    <title>Dapaglyn</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/dapaglyn_prebooking/assets/img/favicon/favicon.ico">
@@ -52,9 +65,28 @@
 
                     <div class="card-body">
 
-                        <h4 class="mb-2">Admin Login</h4>
+                        <div class="text-center mb-3">
 
-                        <p class="mb-4">Please sign in to continue</p>
+                            <img
+                                src="/dapaglyn_prebooking/assets/img/logo.png"
+                                alt="Dapaglyn Logo"
+                                style="width:140px;">
+                        </div>
+
+                        <h4 class="mb-1">Admin Login</h4>
+
+                        <p class="mb-3">Please sign in to continue</p>
+
+
+
+                        <?php if (isset($_SESSION['login_error'])) { ?>
+
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo $_SESSION['login_error']; ?>
+                            </div>
+
+                        <?php unset($_SESSION['login_error']);
+                        } ?>
 
 
                         <form class="mb-3" method="POST" action="/dapaglyn_prebooking/controllers/login_process.php">
@@ -83,11 +115,14 @@
                                         type="password"
                                         class="form-control"
                                         name="password"
+                                        id="password"
                                         placeholder="Enter password"
                                         required>
 
-                                    <span class="input-group-text cursor-pointer">
+                                    <span class="input-group-text cursor-pointer" id="togglePassword">
+
                                         <i class="bx bx-hide"></i>
+
                                     </span>
 
                                 </div>
@@ -117,6 +152,21 @@
 
     </div>
 
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+        const icon = togglePassword.querySelector('i');
+
+        togglePassword.addEventListener('click', function() {
+
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+
+            icon.classList.toggle('bx-hide');
+            icon.classList.toggle('bx-show');
+
+        });
+    </script>
 
     <!-- Core JS -->
 

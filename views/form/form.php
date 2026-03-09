@@ -8,6 +8,9 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/dapaglyn_prebooking/assets/img/favicon/favicon.ico">
+
     <link rel="stylesheet" href="/dapaglyn_prebooking/assets/vendor/fonts/boxicons.css" />
 
     <link rel="stylesheet" href="/dapaglyn_prebooking/assets/vendor/css/core.css" />
@@ -15,7 +18,7 @@
 
     <link rel="stylesheet" href="/dapaglyn_prebooking/assets/css/demo.css" />
 
-    <title>Reserve Your Copy</title>
+    <title>Dapaglyn</title>
 
     <style>
         @media (min-width:768px) {
