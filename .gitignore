@@ -1,0 +1,39 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+
+# Database dumps
+*.sql
+
+# Node modules (if ever used)
+node_modules/
+
+# Composer dependencies (if used later)
+vendor/
+
+# Temporary files
+*.tmp
+*.cache
+
+# Uploads (if you add file upload later)
+uploads/
+
+# Backup files
+*.bak
+*.old
+
+# Local config overrides
+config/local.php
