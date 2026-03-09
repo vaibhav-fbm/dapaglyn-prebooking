@@ -9,14 +9,14 @@
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/dapaglyn_prebooking/assets/img/favicon/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon/favicon.ico">
 
-    <link rel="stylesheet" href="/dapaglyn_prebooking/assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="/assets/vendor/fonts/boxicons.css" />
 
-    <link rel="stylesheet" href="/dapaglyn_prebooking/assets/vendor/css/core.css" />
-    <link rel="stylesheet" href="/dapaglyn_prebooking/assets/vendor/css/theme-default.css" />
+    <link rel="stylesheet" href="/assets/vendor/css/core.css" />
+    <link rel="stylesheet" href="/assets/vendor/css/theme-default.css" />
 
-    <link rel="stylesheet" href="/dapaglyn_prebooking/assets/css/demo.css" />
+    <link rel="stylesheet" href="/assets/css/demo.css" />
 
     <title>Dapaglyn</title>
 
@@ -59,7 +59,7 @@
                     <div class="text-center mb-2">
 
                         <img
-                            src="/dapaglyn_prebooking/assets/img/logo.png"
+                            src="/assets/img/logo.png"
                             alt="Dapaglyn Logo"
                             class="logo-img">
 
@@ -68,7 +68,7 @@
                     <h4 class="text-center mb-3">Reserve Your Copy</h4>
 
 
-                    <form method="POST" action="/dapaglyn_prebooking/controllers/form_submit.php">
+                    <form method="POST" action="/form-submit">
 
                         <div class="mb-3">
 
@@ -198,14 +198,14 @@
 
     </div>
 
-    <script src="/dapaglyn_prebooking/assets/vendor/js/helpers.js"></script>
-    <script src="/dapaglyn_prebooking/assets/js/config.js"></script>
+    <script src="/assets/vendor/js/helpers.js"></script>
+    <script src="/assets/js/config.js"></script>
 
-    <script src="/dapaglyn_prebooking/assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="/dapaglyn_prebooking/assets/vendor/libs/popper/popper.js"></script>
-    <script src="/dapaglyn_prebooking/assets/vendor/js/bootstrap.js"></script>
+    <script src="/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="/assets/vendor/libs/popper/popper.js"></script>
+    <script src="/assets/vendor/js/bootstrap.js"></script>
 
-    <script src="/dapaglyn_prebooking/assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 
     <?php if (isset($_SESSION['response'])): ?>
 

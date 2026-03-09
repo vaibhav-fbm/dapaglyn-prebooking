@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../config/database.php';
+require './config/database.php';
 
 $doctor = $_POST['doctor_name'] ?? '';
 $contact = $_POST['contact_number'] ?? '';
@@ -52,5 +52,5 @@ try {
     ];
 }
 
-header("Location: /dapaglyn_prebooking/form");
+header("Location: /form");
 exit;

@@ -19,13 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
 
-        header("Location: /dapaglyn_prebooking/dashboard");
+        header("Location: /dashboard");
         exit;
     } else {
 
         $_SESSION['login_error'] = "Invalid username or password";
 
-        header("Location: /dapaglyn_prebooking/login");
+        header("Location: /login");
         exit;
     }
 }

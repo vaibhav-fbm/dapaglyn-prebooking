@@ -31,7 +31,7 @@ $result = $conn->query("SELECT * FROM book_reservations ORDER BY id DESC LIMIT $
 minimum-scale=1.0, maximum-scale=1.0" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/dapaglyn_prebooking/assets/img/favicon/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon/favicon.ico">
 
     <title>Dapaglyn</title>
 
@@ -64,7 +64,7 @@ minimum-scale=1.0, maximum-scale=1.0" />
                         </div>
 
                         <div>
-                            <a href="/dapaglyn_prebooking/logout" class="btn btn-sm btn-danger">
+                            <a href="/logout" class="btn btn-sm btn-danger">
                                 Logout
                             </a>
                         </div>
@@ -85,7 +85,7 @@ minimum-scale=1.0, maximum-scale=1.0" />
                                 Prebooking Entries
                             </h4>
 
-                            <a href="/dapaglyn_prebooking/export" class="btn btn-primary">
+                            <a href="/export" class="btn btn-primary">
                                 Download CSV
                             </a>
 

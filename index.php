@@ -1,13 +1,10 @@
 <?php
 
-$route = $_GET['route'] ?? '';
+$route = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 
 switch ($route) {
 
     case '':
-        require 'views/form/form.php';
-        break;
-
     case 'form':
         require 'views/form/form.php';
         break;
@@ -25,9 +22,14 @@ switch ($route) {
         break;
 
     case 'logout':
-        require './logout.php';
+        require 'logout.php';
+        break;
+
+    case 'form-submit':
+        require './controllers/form_submit.php';
         break;
 
     default:
+        http_response_code(404);
         echo "404 Page Not Found";
 }

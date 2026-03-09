@@ -6,7 +6,7 @@ header("Pragma: no-cache");
 header("Expires: 0");
 
 if (isset($_SESSION['user_id'])) {
-    header("Location: /dapaglyn_prebooking/dashboard");
+    header("Location: /dashboard");
     exit;
 }
 ?>
@@ -27,7 +27,7 @@ if (isset($_SESSION['user_id'])) {
     <title>Dapaglyn</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/dapaglyn_prebooking/assets/img/favicon/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon/favicon.ico">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,20 +36,20 @@ if (isset($_SESSION['user_id'])) {
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Icons -->
-    <link rel="stylesheet" href="/dapaglyn_prebooking/assets/vendor/fonts/boxicons.css">
+    <link rel="stylesheet" href="/assets/vendor/fonts/boxicons.css">
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="/dapaglyn_prebooking/assets/vendor/css/core.css">
-    <link rel="stylesheet" href="/dapaglyn_prebooking/assets/vendor/css/theme-default.css">
-    <link rel="stylesheet" href="/dapaglyn_prebooking/assets/css/demo.css">
+    <link rel="stylesheet" href="/assets/vendor/css/core.css">
+    <link rel="stylesheet" href="/assets/vendor/css/theme-default.css">
+    <link rel="stylesheet" href="/assets/css/demo.css">
 
     <!-- Page CSS -->
-    <link rel="stylesheet" href="/dapaglyn_prebooking/assets/vendor/css/pages/page-auth.css">
+    <link rel="stylesheet" href="/assets/vendor/css/pages/page-auth.css">
 
     <!-- Helpers -->
-    <script src="/dapaglyn_prebooking/assets/vendor/js/helpers.js"></script>
+    <script src="/assets/vendor/js/helpers.js"></script>
 
-    <script src="/dapaglyn_prebooking/assets/js/config.js"></script>
+    <script src="/assets/js/config.js"></script>
 
 </head>
 
@@ -68,7 +68,7 @@ if (isset($_SESSION['user_id'])) {
                         <div class="text-center mb-3">
 
                             <img
-                                src="/dapaglyn_prebooking/assets/img/logo.png"
+                                src="/assets/img/logo.png"
                                 alt="Dapaglyn Logo"
                                 style="width:140px;">
                         </div>
@@ -89,7 +89,7 @@ if (isset($_SESSION['user_id'])) {
                         } ?>
 
 
-                        <form class="mb-3" method="POST" action="/dapaglyn_prebooking/controllers/login_process.php">
+                        <form class="mb-3" method="POST" action="/controllers/login_process.php">
 
                             <div class="mb-3">
 
@@ -170,15 +170,15 @@ if (isset($_SESSION['user_id'])) {
 
     <!-- Core JS -->
 
-    <script src="/dapaglyn_prebooking/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="/assets/vendor/libs/jquery/jquery.js"></script>
 
-    <script src="/dapaglyn_prebooking/assets/vendor/libs/popper/popper.js"></script>
+    <script src="/assets/vendor/libs/popper/popper.js"></script>
 
-    <script src="/dapaglyn_prebooking/assets/vendor/js/bootstrap.js"></script>
+    <script src="/assets/vendor/js/bootstrap.js"></script>
 
-    <script src="/dapaglyn_prebooking/assets/vendor/js/menu.js"></script>
+    <script src="/assets/vendor/js/menu.js"></script>
 
-    <script src="/dapaglyn_prebooking/assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 
 </body>
 
