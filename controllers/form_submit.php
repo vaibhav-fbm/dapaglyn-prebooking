@@ -1,56 +1,58 @@
 <?php
+
 session_start();
 require './config/database.php';
 
-$doctor = $_POST['doctor_name'] ?? '';
-$contact = $_POST['contact_number'] ?? '';
-$city = $_POST['city'] ?? '';
-$email = $_POST['email'] ?? '';
-$speciality = $_POST['speciality'] ?? '';
 
-try {
 
-    // Check duplicate contact number
-    $stmt = $conn->prepare("SELECT id FROM book_reservations WHERE contact_number = ?");
-    $stmt->bind_param("s", $contact);
-    $stmt->execute();
-    $result = $stmt->get_result();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    if ($result->num_rows > 0) {
+    $doctor = $conn->real_escape_string($_POST['doctor_name']);
+    $contact = $conn->real_escape_string($_POST['contact_number']);
+    $city = $conn->real_escape_string($_POST['city']);
+    $email = $conn->real_escape_string($_POST['email']);
+    $speciality = $conn->real_escape_string($_POST['speciality']);
 
-        $_SESSION['response'] = [
-            "type" => "error",
-            "message" => "Prebooking already submitted"
-        ];
-    } else {
+    try {
 
-        $insert = $conn->prepare("INSERT INTO book_reservations 
-        (doctor_name, contact_number, city, email, speciality)
-        VALUES (?, ?, ?, ?, ?)");
+        // Check duplicate contact
+        $checkQuery = "SELECT id FROM book_reservations WHERE contact_number='$contact'";
+        $result = $conn->query($checkQuery);
 
-        $insert->bind_param("sssss", $doctor, $contact, $city, $email, $speciality);
-
-        if ($insert->execute()) {
-
-            $_SESSION['response'] = [
-                "type" => "success",
-                "message" => "Your prebooking is received. We will contact you shortly."
-            ];
-        } else {
+        if ($result->num_rows > 0) {
 
             $_SESSION['response'] = [
                 "type" => "error",
-                "message" => "Database error occurred"
+                "message" => "Prebooking already submitted"
             ];
+        } else {
+
+            $insertQuery = "INSERT INTO book_reservations 
+            (doctor_name, contact_number, city, email, speciality)
+            VALUES ('$doctor', '$contact', '$city', '$email', '$speciality')";
+
+            if ($conn->query($insertQuery)) {
+
+                $_SESSION['response'] = [
+                    "type" => "success",
+                    "message" => "Your prebooking is received. We will contact you shortly."
+                ];
+            } else {
+
+                $_SESSION['response'] = [
+                    "type" => "error",
+                    "message" => "Database error occurred"
+                ];
+            }
         }
+    } catch (Exception $e) {
+
+        $_SESSION['response'] = [
+            "type" => "error",
+            "message" => "Something went wrong"
+        ];
     }
-} catch (Exception $e) {
 
-    $_SESSION['response'] = [
-        "type" => "error",
-        "message" => "Something went wrong"
-    ];
+    header("Location: /form");
+    exit;
 }
-
-header("Location: /form");
-exit;
